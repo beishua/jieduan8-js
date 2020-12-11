@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.trainRegister{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.trainRegister-button{
+    text-align: center;
+}
+.trainEdit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+}
+.trainEdit-button{
+    text-align: center;
+}

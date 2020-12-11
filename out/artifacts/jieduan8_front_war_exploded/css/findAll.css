@@ -1,0 +1,32 @@
+.find-all{
+    width: 100%;
+}
+.find-all tbody tr:nth-child(even){
+    background-color: aqua;
+}
+.find-all tbody tr:nth-child(odd){
+    background-color: aquamarine;
+}
+.find-all thead th{
+    text-align: left;
+
+}
+.find-all>tbody>tr>td{
+   min-width:50px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    max-width: 500px;
+}
+.findBySome{
+    display: flex;
+    flex-wrap: wrap;
+}
+.findBySome>div{
+    padding:5px 20px;
+}
+/*.delAll>div{*/
+/*    border: 1px red solid;*/
+/*    display: flex;*/
+/*    flex-wrap: wrap-reverse;*/
+/*}*/

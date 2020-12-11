@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/userRegister.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/myAjax.js"></script>
+    <script src="/js/user/userRegister.js"></script>
+</head>
+<body>
+<div class="userRegister">
+    <div>
+        <div>用户名：<input type="text" id="userName" name="userName" pattern="^[a-zA-Z]\w{5,15}$">
+            <label id="nameTip"></label>
+        </div>
+        <div>密码：<input type="password" id="password" name="password" pattern="^[a-zA-Z]\w{5,15}$"></div>
+        <div>重新输入密码：<input type="password" id="rePassword" name="rePassword" pattern="^[a-zA-Z]\w{5,15}$"
+                           onblur="checkPassword()">
+            <label id="passwordTip"></label>
+        </div>
+        <div class="userRegister-button">
+        <div><input type="submit" value="注册" onclick="register()">
+        <input type="reset" value="重置"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<!--        <div>验证码：<input type="text" id="code" name="code" pattern="\w{4}"></div >-->

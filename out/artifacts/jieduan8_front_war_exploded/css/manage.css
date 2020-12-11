@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.top{
+    height: 70px;
+    background-color: dimgray;
+}
+.top>div{
+    width: 1000px;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.top>div>div:first-child{
+    float: left;
+    line-height: 70px;
+}
+.top>div>div:nth-child(2){
+    float: right;
+    line-height: 70px;
+}
+.left{
+    width: 140px;
+    height: calc(100vh - 70px);
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    float: left;
+}
+ol{
+    text-indent: 2em;
+}
+ul,ol,li{
+    list-style: none;
+}
+.right{
+    float: right;
+    width: calc(100% - 140px);
+    height: calc(100vh - 70px);
+    background-color:wheat;
+}
+
+
+
+
+
+
+

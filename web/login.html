@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/myAjax.js"></script>
+    <script src="/js/login.js"></script>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+<div class="login">
+    <div>
+        <div>
+            <div>用户名：</div>
+            <div><input type="text" id="userName" ></div>
+        </div>
+        <div>
+            <div>密码：</div>
+            <div><input type="password" id="password"></div>
+        </div>
+        <div>
+            <div>验证码：</div>
+            <div><input type="text" id="code" style="width: 70px;margin-right: 10px"></div>
+<!--            <div><img src="http://localhost:8080/code" id="getCode" onclick="flushCode(this)"></div>-->
+        </div>
+        <div><input type="button" value="登录" onclick="login()">
+            <a href="/back/User/userRegister.html">注册</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

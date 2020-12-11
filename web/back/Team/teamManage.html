@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/findAll.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/myAjax.js"></script>
+    <script src="/js/team/teamManage.js"></script>
+</head>
+<body>
+<div class="findBySome">
+    <div>小组编号<input type="text" id="teamCode"  style="height: 20px"></div>
+    <div>状态
+        <select id="state" style="height: 25px">
+            <option value="0">全部</option>
+            <option value="1">正常</option>
+            <option value="1">毕业</option>
+        </select>
+    </div>
+    <div>成立时间<input type="date" id="startDate" style="height: 25px">-
+        <input type="date" id="endDate" style="height: 25px"></div>
+    <div><input type="button" value="查询" onclick="findAll()"  style="height: 25px">
+        <input type="reset" value="重置" onclick="window.teamClear()"  style="height: 25px"></div>
+</div>
+<table class="find-all">
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>组名</th>
+        <th>组长编号</th>
+        <th>组长</th>
+        <th>人数</th>
+        <th>状态</th>
+        <th>成立时间</th>
+        <th>更新时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody id="teamFindAll">
+
+    </tbody>
+</table>
+<div id="page">
+
+</div>
+</body>
+</html>
