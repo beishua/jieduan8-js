@@ -14,9 +14,8 @@ function findAll(){
     data.startCreateTime=$("#startCreateTime").val();
     data.endCreateTime=$("#endCreateTime").val();
     let result = myAjax('team/getTeam', 'post', data);
-    setData(result.list);
-    $("#pageCount").html(result.number);
-    console.log(result);
+        setData(result.list);
+        $("#pageCount").html(result.number);
 }
 function setData(data){
     let html='';//字符串拼接
@@ -39,20 +38,22 @@ function setData(data){
 }
 function edit(id) {
     sessionStorage.setItem("teamId",id);
-    $('#right').load('/back/Team/teamManage.html');
+    $('#right').load('/back/Team/teamEdit.html');
 }
 function del(id) {
     let result=myAjax('team/del','post',{id:id});
     if (result.result == 1) {
-        alert("操作不可逆，确认删除？")
-        findAll();//刷新页面
-    } else {
-        alert("删除失败！")
+    findAll();//刷新页面
+    }else if (result.result==0){
+        alert("当前小组还有成员，不能删除！");
     }
 }
 function teamClear() {
     document.getElementById("teamCode").value="";
     document.getElementById("state").value="0";
-    document.getElementById("startDate").value="";
-    document.getElementById("endDate").value="";
+    document.getElementById("startCreateTime").value="";
+    document.getElementById("endCreateTime").value="";
 }
+// function modify(){
+//     document.getElementById('state').innerHTML = '正常';
+// }

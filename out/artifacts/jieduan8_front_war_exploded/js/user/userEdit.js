@@ -1,6 +1,5 @@
 $(function () {
     findById();
-
 })
 function findById() {
     // let id=sessionStorage.getItem("userId")

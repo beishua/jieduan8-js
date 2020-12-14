@@ -14,18 +14,19 @@
     <div>状态
         <select id="state" style="height: 25px">
             <option value="0">全部</option>
-            <option value="1">正常</option>
-            <option value="1">毕业</option>
+            <option value="正常">正常</option>
+            <option value="毕业">毕业</option>
         </select>
     </div>
-    <div>成立时间<input type="date" id="startDate" style="height: 25px">-
-        <input type="date" id="endDate" style="height: 25px"></div>
+    <div>成立时间<input type="date" id="startCreateTime" style="height: 25px">-
+        <input type="date" id="endCreateTime" style="height: 25px"></div>
     <div><input type="button" value="查询" onclick="findAll()"  style="height: 25px">
         <input type="reset" value="重置" onclick="window.teamClear()"  style="height: 25px"></div>
 </div>
 <table class="find-all">
     <thead>
     <tr>
+        <th>id</th>
         <th>编号</th>
         <th>组名</th>
         <th>组长编号</th>

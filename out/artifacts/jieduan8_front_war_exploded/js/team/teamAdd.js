@@ -1,11 +1,8 @@
 function teamAdd(){
 //取得页面的值
-    let data=new FormData();
-    data.append("teamCode",$("#teamCode").val());
-    // data.append("teamName",$("#picture")[0].files[0]);
-    data.append("teamName",$("#teamName").val());
-    //调用后台
-    let result=myAjax('team/add','post',data);
+    let teamCode= $("#teamCode").val();
+    let teamName= $("#teamName").val();
+    let result=myAjax('team/add','post', {teamCode:teamCode,teamName:teamName});
     if (result.count==1){
         $('#right').load('/back/Team/teamManage.html');
     }else if (result.count==2){
@@ -15,6 +12,6 @@ function teamAdd(){
         alert("添加失败！");
     }
 }
-function cel(){
-    $('#right').load('/back/Team/teamManage.html');
-}
+// function cel(){
+//     $('#right').load('/back/Team/teamManage.html');
+// }
