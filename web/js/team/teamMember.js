@@ -29,3 +29,7 @@ function setData(data){
     }
     $("#groupFindAll").html(html);//对当前的tbody进行赋值
 }
+function allocation(teamCode) {
+    sessionStorage.setItem("teamCode",teamCode);
+    $('#right').load('/back/Team/teamMember.html');
+}

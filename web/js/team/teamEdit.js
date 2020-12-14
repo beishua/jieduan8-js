@@ -28,10 +28,12 @@ function teamEditClear() {
     document.getElementById("teamName").value="";
     document.getElementById("teamLeader").value="";
 }
-function setTeamLeader(data){
+function setTeamLeader(teamCode){
+    let data= myAjax("/leaderName","post",{teamCode:teamCode});
     let html='';
     for (let i=0;i<data.length;i++){
-        html+= '<div>'+data[i].memberName+'</div>';
+        html+= '<div>'+data[i].teamCode+'</div>';
     }
-    $("#teamLeader").html(teamLeader);
+    $("#teamLeader").html(html);
+    setData(data.list);
 }

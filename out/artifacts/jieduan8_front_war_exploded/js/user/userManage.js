@@ -48,11 +48,12 @@ function edit(id) {
 }
 function del(id) {
     let result=myAjax('user/del','post',{id:id});
-    if (result.result == 1) {
-        alert("操作不可逆，确认删除？")
-        findAll();//刷新页面
+    if (!confirm("操作不可逆，确认删除？")) {
+        return false;
     } else {
-        alert("删除失败！")
+        if (result.result == 1) {
+            findAll();//刷新页面
+        }
     }
 }
 function uClear() {

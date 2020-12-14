@@ -54,6 +54,3 @@ function teamClear() {
     document.getElementById("startCreateTime").value="";
     document.getElementById("endCreateTime").value="";
 }
-// function modify(){
-//     document.getElementById('state').innerHTML = '正常';
-// }

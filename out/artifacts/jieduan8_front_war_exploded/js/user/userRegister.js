@@ -1,5 +1,5 @@
 function register() {
-    let userName= $("#userName").val();
+    let userName= $("#userName2").val();
     let password= $("#password").val();
     let result=myAjax('user/userRegister','post',{userName:userName,password:password});
             if (result.result==1){
