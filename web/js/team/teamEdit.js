@@ -2,22 +2,23 @@ $(function () {
     findById();
 })
 function findById() {
-    let result=myAjax('team/findById','post',{id:sessionStorage.getItem("teamId")});
-    setData(result.result);
-    setTeamLeader(result);
-    console.log(result);
+    let data=myAjax('team/findById','post',{teamCode:sessionStorage.getItem("teamCode")});
+    setData(data.result);
+    setTeamLeader(data.list);
 }
 function setData(data) {
-    $("#teamId").val(data.id);
     $("#teamName").val(data.teamName);
-    $("#teamLeader").val(data);
+    $("#teamCode").val(data.teamCode);
 }
 function edit() {
     let data = {
-        id: $("#teamId").val(),
         teamName: $("#teamName").val(),
-        teamLeader: $("#teamLeader").val(),
+        leaderName: $("select option:checked").text(),
+        teamCode:$("#teamCode").val(),
+        leaderCode:$("#leaderName").val(),
+
     };
+    console.log(data);
     let result = myAjax('team/teamEdit','post',data);
     if (result.count==1){
         $(".right").load("/back/Team/teamManage.html");
@@ -27,15 +28,14 @@ function edit() {
 }
 function teamEditClear() {
     document.getElementById("teamName").value="";
-    document.getElementById("teamLeader").value="";
 }
-function setTeamLeader(teamCode){
-    console.log(teamCode);
-    let data= myAjax("team/leaderName","post",{teamCode:teamCode});
+function setTeamLeader(){
+    let data= myAjax("team/leaderName","post",{teamCode:sessionStorage.getItem("teamCode")});
+    console.log(data)
+    data=data.list;
     let html='';
     for (let i=0;i<data.length;i++){
-        html+= '<option>'+data[i].teamCode+'</option>';
+        html+= '<option value="' + data[i].userCode + '">'+data[i].userName+'</option>';
     }
-    $("#teamLeader").html(html);
-
+    $("#leaderName").html(html);
 }

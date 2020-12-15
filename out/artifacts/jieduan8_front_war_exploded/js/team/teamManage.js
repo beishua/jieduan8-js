@@ -7,7 +7,7 @@ function findAll(){
     data.pageSize = $.trim($("#pageSize").val());
     data.teamCode=$.trim($("#teamCode").val());
     data.teamName=$.trim($("#teamName").val());
-    data.teamLeader=$.trim($("#teamLeader").val());
+    data.leaderCode=$.trim($("#leaderCode").val());
     data.leaderName=$.trim($("#leaderName").val());
     data.teamSize=$.trim($("#teamSize").val());
     data.state=$("#state").find("option:selected").text();
@@ -24,20 +24,21 @@ function setData(data){
             '            <td>' + data[i].id + '</td>\n' +
             '            <td>' + (data[i].teamCode == undefined || data[i].teamCode == 'null' ? '' : data[i].teamCode) + '</td>\n' +
             '            <td>' + (data[i].teamName == undefined || data[i].teamName == 'null' ? '' : data[i].teamName) + '</td>\n' +
-            '            <td>' + (data[i].teamLeader == undefined || data[i].teamLeader == 'null' ? '' : data[i].teamLeader) + '</td>\n' +
+            '            <td>' + (data[i].leaderCode == undefined || data[i].leaderCode == 'null' ? '' : data[i].leaderCode) + '</td>\n' +
             '            <td>' + (data[i].leaderName == undefined || data[i].leaderName == 'null' ? '' : data[i].leaderName) + '</td>\n' +
             '            <td>' + (data[i].teamSize == undefined || data[i].teamSize == 'null' ? '' : data[i].teamSize) + '</td>\n' +
             '            <td>' + (data[i].state == undefined || data[i].state == 'null' ? '' : data[i].state) + '</td>\n' +
             '            <td>' + (data[i].createTime == undefined || data[i].createTime == 'null' ? '' : data[i].createTime) + '</td>\n' +
             '            <td>' + (data[i].updateTime == undefined || data[i].updateTime == 'null' ? '' : data[i].updateTime) + '</td>\n' +
-            '            <td><a href="javascript:edit(' + data[i].id + ')">编辑</a> <a href="javascript:del(' + data[i].id + ')">删除</a></td>\n' +
+            '            <td><a href="javascript:edit(&quot;' + data[i].teamCode + '&quot;)">编辑</a> <a href="javascript:del(' + data[i].id + ')">删除</a></td>\n' +
             '        </tr>';
     }
     $("#teamFindAll").html(html);//对当前的tbody进行赋值
 
 }
-function edit(id) {
-    sessionStorage.setItem("teamId",id);
+function edit(teamCode) {
+    sessionStorage.setItem("teamCode",teamCode);
+    // console.log(teamCode);
     $('#right').load('/back/Team/teamEdit.html');
 }
 function del(id) {
