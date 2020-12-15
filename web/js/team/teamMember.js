@@ -1,5 +1,6 @@
 $(function () {
     $("#page").load("/back/page.html");
+
 })
 function findAll(){
     let data={};
@@ -8,8 +9,8 @@ function findAll(){
     data.teamCode=$.trim($("#teamCode").val());
     data.teamName=$.trim($("#teamName").val());
     data.teamLeader=$.trim($("#teamLeader").val());
-    data.startCreateTime=$("#startCreateTime").val();
-    data.endCreateTime=$("#endCreateTime").val();
+    data.createTime=$("#createTime").val();
+    data.updateTime=$("#updateTime").val();
     let result = myAjax('team/getGroup', 'post', data);
     setData(result.list);
     $("#pageCount").html(result.number);
